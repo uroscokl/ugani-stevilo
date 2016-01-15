@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block vsebina %}
+
+ <!-- Header -->
+<header id="top" class="header">
+    <div class="text-vertical-center">
+
+    <div class="container col-md-4"></div>
+
+    <div class="container col-md-4 box">
+        <p class="uvod"><span style="opacity:0.7">Ugani</span><br>
+            <b>najslavnejše število</b>
+            <br><span style="opacity:0.7">v popkulturi.</span></p><br>
+
+        <form  role="form" method="post" action="/">
+            <div class="form-group">
+                <input type="number" class="form-control" name="stX" placeholder="vpiši število">
+            </div>
+
+
+            <button type="submit" class="btn btn-default" style="color:#3e0262">Potrdi</button>
+        <br><br>
+
+            <div class="odgBox">
+                {% if rezultat == 2 %}
+                    <p class="odg">Vaše število je veliko previsoko. Poskusite z manj kot 50.</p>
+                {% elif rezultat == 3 %}
+                    <p class="odg">Zelo ste blizu, ampak ne dovolj. Poskustite znova.</p>
+                {% elif rezultat == 4 %}
+                    <p class="odg">Manjka vam samo še čisto malo. Poskusite znova.</p>
+                {% elif rezultat == 5 %}
+                    <p class="odg">Vaše število je prenizko. Poskusite s številom več kot 30.</p>
+                {% endif %}
+            </div>
+        </form>
+
+
+
+
+
+
+    </div>
+
+    <div class="container col-sm-4"></div>
+    </div>
+</header>
+
+{% endblock vsebina %}
